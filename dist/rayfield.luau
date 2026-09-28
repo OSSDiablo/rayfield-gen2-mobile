@@ -1,4 +1,4 @@
--- Rayfield Preview Fixed v1.2.0 by Astris Hub (1262ce9, 2026-09-28)
+-- Rayfield Preview Fixed v1.2.0 by Astris Hub (0311b1f, 2026-09-28)
 local a local aa,ab,ac,ad,ae,af,ag,ah,ai,aj,ak,al,am,an,ao,ap,aq,ar,as,at,au={function()local b,c,d=a(1)local e return(
 function(...)local f,g,h,i,j=d(c.utility.variables),d(c.utility.image),d(c.utility.locale),d(c.utility.constants),d(c.
 types)export type Theme=j.Theme export type Translator=j.Translator export type Translations=j.Translations export type
@@ -2543,13 +2543,14 @@ in ah.icons do local as=ar::number ap[as]=am..tostring(as)..'.png'end local aq=0
 then pcall(ae.ensureFolder,aj)pcall(ae.ensureFolder,ak)local av=al:getAssetContentFromUrl(au,at,false)if not av or
 string.sub(av,1,8)~=ar then return nil end if not pcall(ae.writefile,at,av)then return nil end end local av,aw=pcall(
 getfenv().getcustomasset,at)return if av and type(aw)=='string'then aw else nil end function ai.logo():string?local at=
-getfenv()if type(at.getcustomasset)~='function'or typeof(ae.isfile)~='function'then return nil end local au,av,aw=ac(ab.
-Parent.logoImage),(af.join(ak,'logo.png'))if ae.isfile(av)then local ax,ay=pcall(ae.readfile,av)aw=if ax then ay else
-nil end if aw~=au then pcall(ae.ensureFolder,aj)pcall(ae.ensureFolder,ak)if not pcall(ae.writefile,av,au)then return nil
-end end local ax,ay=pcall(at.getcustomasset,av)return if ax and type(ay)=='string'then ay else nil end local function at
-(au:number):string return af.join(ak,'avatar_'..tostring(au)..'.png')end local function au(av:string):string?local aw,ax
-=pcall(function()return ag.httpService:JSONDecode(av)end)if not aw or type(ax)~='table'then return nil end local ay=(ax
-::ThumbnailResponse).data if type(ay)~='table'then return nil end local az=ay[1]if type(az)~='table'then return nil end
+getfenv()if type(at.getcustomasset)~='function'or typeof(ae.isfile)~='function'then return nil end local au,av=ac(ab.
+Parent.logoImage),0 for aw=1,#au,7 do av=(av*31+string.byte(au,aw))%2147483647 end local aw,ax=(af.join(ak,string.
+format('logo_%d_%d.png',#au,av)))if ae.isfile(aw)then local ay,az=pcall(ae.readfile,aw)ax=if ay then az else nil end if
+ax~=au then pcall(ae.ensureFolder,aj)pcall(ae.ensureFolder,ak)if not pcall(ae.writefile,aw,au)then return nil end end
+local ay,az=pcall(at.getcustomasset,aw)return if ay and type(az)=='string'then az else nil end local function at(au:
+number):string return af.join(ak,'avatar_'..tostring(au)..'.png')end local function au(av:string):string?local aw,ax=
+pcall(function()return ag.httpService:JSONDecode(av)end)if not aw or type(ax)~='table'then return nil end local ay=(ax::
+ThumbnailResponse).data if type(ay)~='table'then return nil end local az=ay[1]if type(az)~='table'then return nil end
 local aA=az::ThumbnailEntry if aA.state=='Completed'and type(aA.imageUrl)=='string'then return aA.imageUrl end return
 nil end local function av(aw:number):string?local ax:string?for ay=1,4 do local az=al:getAssetContentFromUrl(string.
 format(ao,aw,an,an),'avatar:'..tostring(aw),ay>1)if az then local aA=au(az)if aA then ax=aA break end end if ay<4 then
@@ -3029,54 +3030,53 @@ maxAspectRatio))return UDim2.fromOffset(au,av)end function af.fit(ar:Vector2?,as
 ~=nil and at<1 local av=af.profile(as,au)if not ar or ar.X<ag or ar.Y<ag then return UDim2.fromOffset(av.defaultSize.X,
 av.defaultSize.Y)end if au then ar/=at::number end local aw,ax=math.min(ar.X*av.maxOccupancyX,ar.X-av.marginFloorX),an(
 av,ar.Y)if av.minAspectRatio then return aq(av,aw,ax)end return ap(av,aw,ax)end return af end)()end},{{1,2,{'Rayfield'},
-{{31,1,{'themes'},{{32,2,{'amethyst'}},{33,2,{'cobalt'}},{35,2,{'ember'}},{37,2,{'rose'}},{36,2,{'frost'}},{34,2,{
-'default'}}}},{39,1,{'utility'},{{47,2,{'flagNames'}},{56,2,{'logoImage'}},{40,2,{'HapticEngine'}},{65,2,{
-'persistenceSettings'}},{61,2,{'path'}},{51,2,{'imageCache'}},{41,2,{'assetResolver'}},{46,2,{'filesystemManager'}},{60,
-2,{'ordering'}},{57,2,{'moveable'}},{42,2,{'colors'}},{69,2,{'services'}},{66,2,{'persistenceWrite'}},{55,2,{'log'}},{59
-,2,{'odometer'}},{50,2,{'image'}},{64,2,{'persistencePaths'}},{49,2,{'functions'}},{58,2,{'network'}},{44,2,{'enums'}},{
-48,2,{'fontManager'}},{52,2,{'layouts'}},{53,2,{'locale'}},{70,2,{'textMetrics'}},{72,2,{'windowSizing'}},{63,2,{
-'persistenceConfig'}},{54,2,{'lockable'}},{43,2,{'constants'}},{62,2,{'persistence'}},{71,2,{'variables'}},{68,2,{
-'runtime'}},{67,2,{'pointer'}},{45,2,{'filesystem'}}}},{38,2,{'types'}},{2,1,{'components'},{{27,2,{'text'}},{14,2,{
-'keybind'}},{20,2,{'sidebar'}},{30,2,{'window'}},{7,2,{'console'}},{11,2,{'dropdown'}},{12,2,{'group'}},{22,2,{'stat'}},
-{29,2,{'toggle'}},{18,2,{'search'}},{21,2,{'slider'}},{9,2,{'divider'}},{28,2,{'toast'}},{26,2,{'tag'}},{25,2,{
-'tabSelector'}},{5,2,{'chrome'}},{24,2,{'tabSection'}},{6,2,{'colorpicker'}},{19,2,{'section'}},{23,2,{'tab'}},{8,2,{
-'descriptor'}},{4,2,{'button'}},{15,2,{'notification'}},{17,2,{'progress'}},{13,2,{'input'}},{3,2,{'action'}},{16,2,{
-'popup'}},{10,2,{'drag'}}}}}}},'0.4.1','Rayfield',string,task,setmetatable,error,next,table,unpack,coroutine,script,type
-,require,pcall,xpcall,tostring,tonumber,_VERSION local av,aw,ax,ay,az,aA,aB=aj.insert,aj.remove,aj.freeze or function(av
-)return av end,al.wrap,ae.sub,ae.match,ae.gmatch if at and az(at,1,4)=='Lune'then local aC,aD=ap(ao,'@lune/task')if aC
-and aD then af=aD end end local aC=af and af.defer local aD,aE,b,c,d,e,f,g,h=aC or function(aD,...)ay(aD)(...)end,{[1]=
-'Folder',[2]='ModuleScript',[3]='Script',[4]='LocalScript',[5]='StringValue'},{},{},{},{},{},{},{}local i,j={GetFullName
-={{},function(i)local j,k=i.Name,i.Parent while k do j=k.Name..'.'..j k=k.Parent end return j end},GetChildren={{},
-function(i)local j={}for k in ai,h[i]do av(j,k)end return j end},GetDescendants={{},function(i)local j={}for k in ai,h[i
-]do av(j,k)for l,m in ai,k:GetDescendants()do av(j,m)end end return j end},FindFirstChild={{'string','boolean?'},
-function(i,j,k)local l=h[i]for m in ai,l do if m.Name==j then return m end end if k then for m in ai,l do return m:
-FindFirstChild(j,true)end end end},FindFirstAncestor={{'string'},function(i,j)local k=i.Parent while k do if k.Name==j
-then return k end k=k.Parent end end},WaitForChild={{'string','number?'},function(i,j)return i:FindFirstChild(j)end}},{}
-for k,l in ai,i do local m,n,o=l[1],l[2],{}for p,q in ai,m do local r,s=aA(q,'^([^%?]+)(%??)')o[p]={r,s}end j[k]=
-function(p,...)if not h[p]then ah("Expected ':' not '.' calling member function "..k,2)end local q={...}for r,s in ai,o
-do local t=q[r]local u,v,w=an(t),s[1],s[2]if t==nil and not w then ah('Argument '..t..' missing or nil',3)end if v~=
-'any'and u~=v and not(u=='nil'and w)then ah('Argument '..r..' expects type "'..v..'", got "'..u..'"',2)end end return n(
-p,...)end end local function k(l,m,n)local o,p=(ag({},{__mode='k'}))local function q(r)ah(r..
-' is not a valid (virtual) member of '..l..' "'..m..'"',3)end local function r(s)ah(
-'Unable to assign (virtual) property '..s..'. Property is read only',3)end local s,t={},{}t.__metatable=false t.__index=
-function(u,v)if v=='ClassName'then return l elseif v=='Name'then return m elseif v=='Parent'then return n elseif l==
-'StringValue'and v=='Value'then return p else local w=j[v]if w then return w end end for w in ai,o do if w.Name==v then
-return w end end q(v)end t.__newindex=function(u,v,w)if v=='ClassName'then r(v)elseif v=='Name'then m=w elseif v==
-'Parent'then if w==s then return end if n~=nil then h[n][s]=nil end n=w if w~=nil then h[w][s]=true end elseif l==
-'StringValue'and v=='Value'then p=w else q(v)end end t.__tostring=function()return m end ag(s,t)h[s]=o if n~=nil then h[
-n][s]=true end return s end local function l(m,n)local o,p,q,r=m[1],m[2],m[3],m[4]local s=aE[p]local t=q and aw(q,1)or s
-local u=k(s,t,n)b[o]=u if q then for v,w in ai,q do u[v]=w end end if r then for v,w in ai,r do l(w,u)end end return u
-end local m=k('Folder','['..ad..']')for n,o in ai,ab do l(o,m)end for n,o in ai,aa do local p=b[n]c[p]=o d[p]=n local q=
-p.ClassName if q=='LocalScript'or q=='Script'then av(f,p)end end local function n(o)local p,q=o.ClassName,e[o]if q and p
-=='ModuleScript'then return ak(q)end local r=c[o]local function s(t)local u,v,w=nil,ap(function()return debug.traceback(
-nil,2)end)if v then u=w end return{Message=t,Traceback=u}end local function t(u)local v,w=ar(u.Message),o:GetFullName()
-local x,y=aA(v,'[^:]+:(%d+): (.+)')local z if not x or not au then z=w..':*: '..(y or v)else x=as(x)local A=d[o]local B=
-au[A]local C=x-B+1 if C<0 then C='?'end z=w..':'..C..': '..y end local A=u.Traceback if A and A~=''then z=z..'\n'..A end
-return z end if p=='LocalScript'or p=='Script'then local u,v=aq(r,s)if not u then ah(t(v),0)end else local u={aq(r,s)}
-local v=aw(u,1)if not v then local w=aw(u,1)ah(t(w),0)end e[o]=u return ak(u)end end function a(o)local p=b[o]
-local function q(r,...)local s={ap(r,...)}local t=aw(s,1)if not t then ah(s[1],3)end return ak(s)end local r=ax(ag({},{
-__index=g,__newindex=function(r,s,t)g[s]=t end,__len=function()return#g end,__iter=function()return ai,g end}))local s,t
-=ax{version=ac,envname=ad,shared=r,script=am,require=ao},p local function u(v,...)local w,x,y=an(v),
+{{39,1,{'utility'},{{69,2,{'services'}},{46,2,{'filesystemManager'}},{62,2,{'persistence'}},{68,2,{'runtime'}},{47,2,{
+'flagNames'}},{63,2,{'persistenceConfig'}},{42,2,{'colors'}},{52,2,{'layouts'}},{61,2,{'path'}},{41,2,{'assetResolver'}}
+,{57,2,{'moveable'}},{45,2,{'filesystem'}},{43,2,{'constants'}},{70,2,{'textMetrics'}},{53,2,{'locale'}},{60,2,{
+'ordering'}},{48,2,{'fontManager'}},{56,2,{'logoImage'}},{67,2,{'pointer'}},{66,2,{'persistenceWrite'}},{44,2,{'enums'}}
+,{55,2,{'log'}},{59,2,{'odometer'}},{58,2,{'network'}},{72,2,{'windowSizing'}},{71,2,{'variables'}},{49,2,{'functions'}}
+,{50,2,{'image'}},{65,2,{'persistenceSettings'}},{64,2,{'persistencePaths'}},{40,2,{'HapticEngine'}},{54,2,{'lockable'}}
+,{51,2,{'imageCache'}}}},{2,1,{'components'},{{3,2,{'action'}},{5,2,{'chrome'}},{12,2,{'group'}},{24,2,{'tabSection'}},{
+19,2,{'section'}},{7,2,{'console'}},{30,2,{'window'}},{18,2,{'search'}},{14,2,{'keybind'}},{11,2,{'dropdown'}},{15,2,{
+'notification'}},{4,2,{'button'}},{10,2,{'drag'}},{29,2,{'toggle'}},{9,2,{'divider'}},{28,2,{'toast'}},{16,2,{'popup'}},
+{8,2,{'descriptor'}},{26,2,{'tag'}},{25,2,{'tabSelector'}},{6,2,{'colorpicker'}},{22,2,{'stat'}},{23,2,{'tab'}},{13,2,{
+'input'}},{20,2,{'sidebar'}},{27,2,{'text'}},{21,2,{'slider'}},{17,2,{'progress'}}}},{31,1,{'themes'},{{35,2,{'ember'}},
+{33,2,{'cobalt'}},{36,2,{'frost'}},{34,2,{'default'}},{37,2,{'rose'}},{32,2,{'amethyst'}}}},{38,2,{'types'}}}}},'0.4.1',
+'Rayfield',string,task,setmetatable,error,next,table,unpack,coroutine,script,type,require,pcall,xpcall,tostring,tonumber
+,_VERSION local av,aw,ax,ay,az,aA,aB=aj.insert,aj.remove,aj.freeze or function(av)return av end,al.wrap,ae.sub,ae.match,
+ae.gmatch if at and az(at,1,4)=='Lune'then local aC,aD=ap(ao,'@lune/task')if aC and aD then af=aD end end local aC=af
+and af.defer local aD,aE,b,c,d,e,f,g,h=aC or function(aD,...)ay(aD)(...)end,{[1]='Folder',[2]='ModuleScript',[3]=
+'Script',[4]='LocalScript',[5]='StringValue'},{},{},{},{},{},{},{}local i,j={GetFullName={{},function(i)local j,k=i.Name
+,i.Parent while k do j=k.Name..'.'..j k=k.Parent end return j end},GetChildren={{},function(i)local j={}for k in ai,h[i]
+do av(j,k)end return j end},GetDescendants={{},function(i)local j={}for k in ai,h[i]do av(j,k)for l,m in ai,k:
+GetDescendants()do av(j,m)end end return j end},FindFirstChild={{'string','boolean?'},function(i,j,k)local l=h[i]for m
+in ai,l do if m.Name==j then return m end end if k then for m in ai,l do return m:FindFirstChild(j,true)end end end},
+FindFirstAncestor={{'string'},function(i,j)local k=i.Parent while k do if k.Name==j then return k end k=k.Parent end end
+},WaitForChild={{'string','number?'},function(i,j)return i:FindFirstChild(j)end}},{}for k,l in ai,i do local m,n,o=l[1],
+l[2],{}for p,q in ai,m do local r,s=aA(q,'^([^%?]+)(%??)')o[p]={r,s}end j[k]=function(p,...)if not h[p]then ah(
+"Expected ':' not '.' calling member function "..k,2)end local q={...}for r,s in ai,o do local t=q[r]local u,v,w=an(t),s
+[1],s[2]if t==nil and not w then ah('Argument '..t..' missing or nil',3)end if v~='any'and u~=v and not(u=='nil'and w)
+then ah('Argument '..r..' expects type "'..v..'", got "'..u..'"',2)end end return n(p,...)end end local function k(l,m,n
+)local o,p=(ag({},{__mode='k'}))local function q(r)ah(r..' is not a valid (virtual) member of '..l..' "'..m..'"',3)end
+local function r(s)ah('Unable to assign (virtual) property '..s..'. Property is read only',3)end local s,t={},{}t.
+__metatable=false t.__index=function(u,v)if v=='ClassName'then return l elseif v=='Name'then return m elseif v=='Parent'
+then return n elseif l=='StringValue'and v=='Value'then return p else local w=j[v]if w then return w end end for w in ai
+,o do if w.Name==v then return w end end q(v)end t.__newindex=function(u,v,w)if v=='ClassName'then r(v)elseif v=='Name'
+then m=w elseif v=='Parent'then if w==s then return end if n~=nil then h[n][s]=nil end n=w if w~=nil then h[w][s]=true
+end elseif l=='StringValue'and v=='Value'then p=w else q(v)end end t.__tostring=function()return m end ag(s,t)h[s]=o if
+n~=nil then h[n][s]=true end return s end local function l(m,n)local o,p,q,r=m[1],m[2],m[3],m[4]local s=aE[p]local t=q
+and aw(q,1)or s local u=k(s,t,n)b[o]=u if q then for v,w in ai,q do u[v]=w end end if r then for v,w in ai,r do l(w,u)
+end end return u end local m=k('Folder','['..ad..']')for n,o in ai,ab do l(o,m)end for n,o in ai,aa do local p=b[n]c[p]=
+o d[p]=n local q=p.ClassName if q=='LocalScript'or q=='Script'then av(f,p)end end local function n(o)local p,q=o.
+ClassName,e[o]if q and p=='ModuleScript'then return ak(q)end local r=c[o]local function s(t)local u,v,w=nil,ap(function(
+)return debug.traceback(nil,2)end)if v then u=w end return{Message=t,Traceback=u}end local function t(u)local v,w=ar(u.
+Message),o:GetFullName()local x,y=aA(v,'[^:]+:(%d+): (.+)')local z if not x or not au then z=w..':*: '..(y or v)else x=
+as(x)local A=d[o]local B=au[A]local C=x-B+1 if C<0 then C='?'end z=w..':'..C..': '..y end local A=u.Traceback if A and A
+~=''then z=z..'\n'..A end return z end if p=='LocalScript'or p=='Script'then local u,v=aq(r,s)if not u then ah(t(v),0)
+end else local u={aq(r,s)}local v=aw(u,1)if not v then local w=aw(u,1)ah(t(w),0)end e[o]=u return ak(u)end end function
+a(o)local p=b[o]local function q(r,...)local s={ap(r,...)}local t=aw(s,1)if not t then ah(s[1],3)end return ak(s)end
+local r=ax(ag({},{__index=g,__newindex=function(r,s,t)g[s]=t end,__len=function()return#g end,__iter=function()return ai
+,g end}))local s,t=ax{version=ac,envname=ad,shared=r,script=am,require=ao},p local function u(v,...)local w,x,y=an(v),
 'Attempted to call require with a non-ModuleScript','Attempted to call require with self'if w=='table'and h[v]then if v.
 ClassName~='ModuleScript'then ah(x,2)elseif v==p then ah(y,2)end return n(v)elseif w=='string'and az(v,1,1)~='@'then if#
 v==0 then ah('Attempted to call require with empty string',2)end local z=p if az(v,1,1)=='/'then z=m elseif az(v,1,2)==
