@@ -35,6 +35,7 @@
       <a href="example.html">Full example</a>
       <a href="faq.html" class="current">FAQ</a>
       <div class="toc">
+        <a href="#stable-or-preview">Stable or preview?</a>
         <a href="#i-pushed-a-change-but-the-old-version-still-loads">I pushed a change but the old version still loads</a>
         <a href="#my-icon-does-not-show-up">My icon does not show up</a>
         <a href="#the-logo-in-the-header-is-missing">The logo in the header is missing</a>
@@ -49,6 +50,8 @@
   </nav>
   <main class="content">
 <h1>FAQ</h1>
+<h2 id="stable-or-preview"><a class="anchor" href="#stable-or-preview">Stable or preview?</a></h2>
+<p>This is <strong>Rayfield Preview Fixed</strong>, which follows Sirius's preview channel: new features arrive here first and can change more often. <a href="https://ossdiablo.github.io/rayfield-stable-fixed/">Rayfield Stable Fixed</a> only moves when Sirius ships a stable release. Right now the two are the same code (Gen2 1.2.0), with the same fixes.</p>
 <h2 id="i-pushed-a-change-but-the-old-version-still-loads"><a class="anchor" href="#i-pushed-a-change-but-the-old-version-still-loads">I pushed a change but the old version still loads</a></h2>
 <p>GitHub caches <code>main</code> links for a few minutes after a push, and adding <code>?t=...</code> to the URL does not always get around it. Load from a commit instead. A commit link never changes, so it cannot be stale:</p>
 <div class="code"><div class="code-head"><span>Lua</span><button class="copy" type="button">Copy</button></div><pre><code class="language-lua">local sha = &quot;put-the-commit-hash-here&quot;

@@ -1,5 +1,12 @@
 # FAQ
 
+## Stable or preview?
+
+This is **Rayfield Preview Fixed**, which follows Sirius's preview channel: new features arrive here
+first and can change more often. [Rayfield Stable Fixed](https://ossdiablo.github.io/rayfield-stable-fixed/)
+only moves when Sirius ships a stable release. Right now the two are the same code (Gen2 1.2.0), with
+the same fixes.
+
 ## I pushed a change but the old version still loads
 
 GitHub caches `main` links for a few minutes after a push, and adding `?t=...` to the URL does not

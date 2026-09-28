@@ -3,6 +3,10 @@
 The [Rayfield Gen2](https://docs.sirius.menu/rayfield-gen2) preview, fixed up for phones by Astris Hub.
 Same API as Gen2, so any Gen2 script runs on it unchanged.
 
+This build follows Sirius's preview channel, which gets new features first. For the build that only
+moves on stable releases, see [Rayfield Stable Fixed](https://github.com/OSSDiablo/rayfield-stable-fixed).
+Right now both are the same code, based on Gen2 1.2.0.
+
 ```lua
 local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/OSSDiablo/rayfield-preview-fixed/main/dist/rayfield.luau"))()
 ```
