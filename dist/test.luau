@@ -39,8 +39,8 @@ local window = Rayfield:CreateWindow({
 -- nothing. This one heads the list, so it carries no space above it.
 window:CreateSection({ name = "General" })
 
--- Home ----------------------------------------------------------------------
-local home = window:CreateTab({ name = "Home", icon = 93364949241311 })
+-- Main ----------------------------------------------------------------------
+local home = window:CreateTab({ name = "Main", icon = 93364949241311 })
 
 home:CreateSection({ name = "Gameplay" })
 
