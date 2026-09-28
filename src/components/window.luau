@@ -891,6 +891,7 @@ function Window:_buildHomeTab()
     self.homeTab:CreateText({
         name = "Astris Hub Discord",
         text = "Updates, new scripts and help. " .. string.gsub(invite, "^https?://", ""),
+        icon = imageCache.discordIcon(),
     })
     self.homeTab:CreateButton({
         name = "Copy Discord invite",
